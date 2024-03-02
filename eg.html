@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global Styles */
+
+h1 {
+  font-size: 60px;
+  line-height: 64px;
+  color: #000000;
+}
+
+h2 {
+  font-size: 50px;
+  line-height: 54px;
+  color: #000000;
+}
+
+h4 {
+  font-size: 30px;
+  color: #000000;
+}
+#hero button:hover{
+  background-color: rgb(55, 47, 47);
+  border: 2px solid rgb(42, 38, 38) ;
+  
+
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+p {
+  font-size: 12px;
+  color: #020202;
+  margin: 1px 0 1px 0;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+body {
+  width: 100%;
+}
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  background-color: aliceblue;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: rgb(151, 187, 207);
+  box-shadow: 0 5px 15px rgba(236, 232, 232, 0.06);
+  z-index: 999;
+  width: 100%;
+  position:sticky;
+  top: 0;
+  left: 0;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#mobile{
+  display:none;
+  align-items: center;
+}
+#close{
+  display: none;
+  align-items: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: #141313;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: grey;
+
+
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: grey;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+.logo  {
+    height: 43px;
+    width: 43px;
+    border-radius: 30px;
+    border: 3px solid rgb(249, 249, 249);
+    position: relative;
+    left: 27px;
+}
+#hero {
+    
+
+ /* background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIPDw8PDxIVFQ8PDw8PDxUVFRUVFQ8PFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAYAAEBAQEBAAAAAAAAAAAAAAAAAQIDB//EABcQAQEBAQAAAAAAAAAAAAAAAAARARL/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A9jCAAKCKQgAAIKYAACKAJBQBFASCgIKAgAAAEFQAABAAAAABoEBaAACgigCKAAAJBQEFAQUBBQEAAAAAAABFEgAaAgAAANUCApiKAABAAAAAAAAAAIACKAIogAAAACKAgqAAAgGgAA0FUAAAABUACgAQAFQAAAAAEAAAKFAATQUEAABAKACABAG1RQAAAAFQAUAEAAAAAAEBRAAAAEACgAICiAAICoAIoA2oAAAAAAAAAAAAgAAAAAAAgAIAogAAAaIAAAmgAqAOioApEUAAAAAEBRAAAAEAVAAQBRAAAARQAQAAEUAQAECgOogCqgCiAKgoIAAAAgAAAIAKgAFEoClQFxAARQBAAAARUBLoqA7FQBQAKABQARRAFRAUEAAAKgCoAKgAAAAAAmgAaACAboAIADrSiAoYAAACAKIAAAAgKgtBAAAAAABKoCABAKAigIKgAIC0AGylAVABUAAEBRCgAAKgAIApqKAAAIApUgBmgAAABoCVdQAKJoAoDQAC6AAAJAAAAAAAAKACKACUAFAENABQBDQAoAGIAIUAToAH/9k=); */
+  /* background-repeat: no-repeat; */
+  /* width: 100%; */
+  /* background-size: cover; */
+  /* height: 110vh; */
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 32px;
+  padding: 33px;
+
+}
+@media(max-width:799px){
+  .section-p1{
+    padding: 40px 40px;
+  }
+  
+   #navbar{
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+     justify-content: flex-start;
+   position: fixed;
+    top: 0;
+  right: -300px; 
+   height: 113vh;
+   width: 300px;
+   background-color: rgb(192, 219, 243);
+   box-shadow: 0 40px  60px rgba(0, 0, 0, 0.1);
+   padding: 80px 0 0 10px;
+   transition: 0.3s;
+  } 
+   #navbar li{
+    margin-bottom: 25px;
+  
+  
+  } 
+  #navbar.active{
+    right: -100px;
+  }
+  #mobile{
+    display:flex;
+    align-items: center;
+  }
+  #mobile i img{
+    width: 22px;
+    height: 22px;
+    
+    
+  }
+  #close {
+    display: initial;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    
+    
+  }
+  #close i img{
+    width: 22px;
+    height: 22px;
+    
+    
+  }
+  #hero {
+    /* background-image: url(https://img.freepik.com/free-photo/portrait-girl-red-beret-whistling-holding-package-pink-background-with-hangers-with-dresses_197531-17611.jpg?w=1060&t=st=1691485938~exp=1691486538~hmac=0b205e736b07773fd18dc899c7263823476514267b852ed06f45fc1da4ca1fae); */
+    /* background-image: url(https://img.freepik.com/free-photo/woman-black-trousers-purple-blouse-laughs-leaning-stand-with-elegant-clothes-pink-background_197531-17614.jpg?w=1060&t=st=1691485743~exp=1691486343~hmac=4a02c0d34b7dcf9c2a5474e3042d230e3b7f1a2dc13b105694be50b0cd8d0098); */
+    /* background-image: url(https://img.freepik.com/free-photo/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes_197531-14251.jpg?w=1060&t=st=1691485617~exp=1691486217~hmac=7e472c8144b2dd8365701fd2dbd1848ac55d81243657426ab725253fe914557d); */
+    /* background-image: url(https://img.freepik.com/free-photo/young-happy-woman-shopper-showing-okay-sign-pleased-with-good-discounts-buying-staff-sale-holding_1258-121112.jpg?w=1380&t=st=1691483512~exp=1691484112~hmac=2ed5328998001d2553cd36edaf8c0f7cde6c331780a2535338e2ca67c243fb7d) ; */
+   
+    /* height: 250vh; */
+    /* padding: 0 40px; */
+    background-position: top 30% right 30%;
+    
+  
+  }
+  #hero .field {
+   
+    display: flex;
+    
+    
+
+
+
+  }
+}
+ #hero .field{
+    height: 40px;
+    width: 20vh;
+  background-color: rgb(135, 186, 220);
+    border:2px solid blue;
+    margin: 23px;
+    text-align: center;
+    
+    justify-content: center;
+    border-radius: 5px;
+
+    
+}
+#hero .field a{
+  color: black;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    top: 8px;
+    transition: 0.3s ease;
+   
+}
+#hero .field a:hover{
+  color: grey;
+  font-size: 18px;
+  
+
+}
+#hero  h2{
+  text-align: center;
+}
+ul{
+  list-style-type: none;
+  
+}
+.unitbox {
+    overflow: hidden;
+    position: relative;
+    margin: 0.5rem 0 1rem;
+    transition: box-shadow .25s;
+    border-radius: 2px;
+    color: #87dee2;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    padding: 20px;
+    
+    text-align: left;
+    background-color:rgb(150, 150, 252) ;
+  }
+  .tips{
+    position: relative;
+    top: 60px;
+  }
+
+
+
+
+</style>
+
+<body>
+    <section id="header">
+        <a href="#"> <img src="https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg?w=1060&t=st=1694950204~exp=1694950804~hmac=1388d09ad4f0dbfd2c6791e8632ddbb15423cc57689ffdc0dc3e5c40bbffecf0" alt="" class="logo">
+        <p>VIDHYASARTHI</p></a>
+        <div>
+            <ul id="navbar">
+                <li ><a href="miniproject.html" >Home</a></li>
+                <li ><a href="serivces" class="active">Services</a></li>
+                <li ><a href="about.html">About</a></li>
+                <li ><a href="contact.html">Contact</a></li>
+                <li ><a href="blog.html">Help</a></li>
+               
+
+              <a href="#" id="close" ><i ><img src="cross.jpg" alt=""></i></a>
+
+
+
+
+            </ul>
+
+        </div>
+    <div id="mobile">
+        <i id="bar"><img src="hamburger_menu_navbar_options_icon_196495.png" alt=""></i>
+    </div>
+        
+    </section>
+    <section id="hero">
+      <h2> engineering graphics-syllabus</h2>
+      <div class="unitbox unit1"><p>
+        <b>UNIT 1:</b><br>Module 1:
+        <br>
+        Introduction to Engineering Drawing covering, Principles of Engineering Graphics and their significance, usage of Drawing instruments, lettering, Conic sections including the Rectangular Hyperbola (General method only); Cycloid, Epicycloid, Hypocycloid and Involute; Scales – Plain, Diagonal and Vernier Scales;
+       
+
+        
+        </p></div>
+        <div class="unitbox unit2"><p>
+          <b>UNIT 2</b><br>Module 2: 
+          <br>
+          Orthographic Projections covering, Principles of Orthographic Projections- Conventions - Projections of Points and lines inclined to both planes; Projections of planes inclined Planes - Auxiliary Planes;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+
+
+         
+          </p></div>
+          <div class="unitbox unit3"><p>
+            <b>UNIT 3</b> <br>Module 3:
+             <br>  Projections of Regular Solids covering, those inclined to both the Planes- Auxiliary Views; Draw simple annotation, dimensioning and scale. Floor plans that include: windows, doors, and fixtures such as WC, bath, sink, shower, etc. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.</p></div>
+            <div class="unitbox unit4"><p>
+              <b>UNIT 4</b> <br>Module 4:
+              <br>
+              Sections and Sectional Views of Right Angular Solids covering, Prism, Cylinder, Pyramid, Cone – Auxiliary Views; Development of surfaces of Right Regular Solids - Prism, Pyramid, Cylinder and Cone; Draw the sectional orthographic views of geometrical solids, objects from industry and dwellings (foundation to slab only)
+              </p></div>
+              <div class="unitbox unit5"><p>
+                <b>UNIT 5</b>:<br>Module 5:
+                <br>
+                Isometric Projections covering, Principles of Isometric projection – Isometric Scale, Isometric Views, Conventions; Isometric Views of lines, Planes, Simple and compound Solids; Conversion of Isometric Views to Orthographic Views and Vice-versa, Conventions;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+                
+         
+                </p></div>
+                <div class="unitbox unit1"><p>
+                  <b>UNIT 6</b>:<br>      Module 6:            <br>
+                  Overview of Computer Graphics covering, listing the computer technologies that impact on graphical communication, Demonstrating knowledge of the theory of CAD software [such as: The Menu System, Toolbars (Standard, Object Properties, Draw, Modify and Dimension), Drawing Area (Background, Crosshairs, Coordinate System), Dialog boxes and windows, Shortcut menus (Button Bars), The Command Line (where applicable), The Status Bar, Different methods of zoom as used in CAD, Select and erase objects.; Isometric Views of lines, Planes, Simple and compound Solids]
+                
+                  </p></div>
+                  <div class="unitbox unit2"><p>
+                    <b>UNIT 7</b>:<br>   Module 7:
+                    <br>
+                    Customisation & CAD Drawing consisting of set up of the drawing page and the printer, including scale settings, Setting up of units and drawing limits; ISO and ANSI standards for coordinate dimensioning and tolerancing; Orthographic constraints, Snap to objects manually and automatically; Producing drawings by using various coordinate input entry methods to draw straight lines, Applying various ways of drawing circles;
+                  
+
+                    </p></div>
+                    <div class="unitbox unit1"><p>
+                        <b>UNIT 8</b>:<br> Module 8:
+                       <br>
+                       Annotations, layering & other functions covering applying dimensions to objects, applying annotations to drawings; Setting up and use of Layers, layers to create drawings, Create, edit and use customized layers; Changing line lengths through modifying existing lines (extend/lengthen); Printing documents to paper using the print command; orthographic projection techniques; Drawing sectional views of composite right regular geometric solids and project the true shape of the sectioned surface; Drawing annotation, Computer-aided design (CAD) software modeling of parts and assemblies. Parametric and non-parametric solid, surface, and wireframe models. Part editing and two-dimensional documentation of models. Planar projection theory, including sketching of perspective, isometric, multiview, auxiliary, and section views. Spatial visualization exercises. Dimensioning guidelines, tolerancing techniques; dimensioning and scale multi views of dwelling;
+                    </p></div>
+                        <div class="unitbox unit2"><p>
+                          <b>UNIT 9</b>:<br>
+                          Module 9: <br>
+                          Demonstration of a simple team design project that illustrates Geometry and topology of engineered components: creation of engineering models and their presentation in standard 2D blueprint form and as 3D wire-frame and shaded solids; meshed topologies for engineering analysis and toolpath generation for component manufacture; geometric dimensioning and tolerancing; Use of solidmodeling software for creating associative models at the component and assembly levels; floor plans that include: windows, doors, and fixtures such as WC, bath, sink, shower, etc. Applying colour coding according to building drawing practice; Drawing sectional elevation showing foundation to ceiling; Introduction to Building Information Modelling (BIM).
+                         
+                          </p></div>
+                     
+               
+        <ul>
+          <h2>View-Notes</h2>
+          <li class="field"><a href="">Unit-1 </a></li>
+            <li class="field"><a href="">Unit-2 </a></li>
+            <li class="field"><a href="">Unit-3</a></li>
+            <li class="field"><a href="">Unit-4</a></li>
+            <li class="field"><a href="">Unit-5</a></li>
+            <li class="field"><a href="">Unit-6 </a></li>
+            <li class="field"><a href="">Unit-7 </a></li>
+            <li class="field"><a href="">Unit-8 </a></li>
+            <li class="field"><a href="">Unit-9 </a></li>
+        </ul>
+        </ul>
+        <div class =" tips">
+          <h2 >Student tips</h2>
+        <h6> 1.&nbsp; Constant practice is very important for getting a good command in eg and one more thing you should also study cad if you want to pass the exam but remember one thing you have to make atleast five diagram in sheets in main exam to get good grades</h6>
+        </div>
+        
+        
+        
+        
+      </section>
+      <section>
+        
+      </section>
+    
+    
+</body>
+<script>
+    const bar = document.getElementById('bar');
+const nav = document.getElementById('navbar');
+const close = document.getElementById('close');
+if (bar){
+    bar.addEventListener('click',()=>{
+        nav.classList.add('active');
+        
+
+
+    })}
+    if (close){
+        close.addEventListener('click',()=>{
+            nav.classList.remove('active');
+            
+    
+    
+        })}
+</script>
+</html>
